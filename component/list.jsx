@@ -1,11 +1,28 @@
-"use-strict";
-var React = require('react');
+import React from "react"
+// var React = require('react');
 
-module.exports=React.createClass({
-	render: function(){
+class List extends React.Component{
+	constructor(props){
+		super(props)
+		this.state={value: "M"}
+	}
+
+	changeSelect(e){
+		this.setState({value: e.target.value()})
+	}
+
+	render(){
 		return(
-			<h1> Hello world</h1>			
+			<div>
+				<select onChange={this.changeSelect.bind(this)} value={this.state.value}>
+					<option value="A">Apple</option>
+					<option value="B">Banana</option>
+					<option value="M">Mango</option>
+		        </select>
+		     </div>			
 			)
 
 	}
-});
+}
+
+export default List;

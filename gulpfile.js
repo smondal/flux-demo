@@ -2,12 +2,17 @@ var gulp = require('gulp');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var browserSync = require('browser-sync').create();
-var reactify = require('reactify');
-
+var babelify = require("babelify");
+// var reactify = require('reactify');
 
 gulp.task('js', function() {
-    return browserify('app.js')
-        .transform(reactify)
+    return browserify(
+        {
+            entries: 'app.js',
+            extensions: ['.jsx'],
+            debug: true
+        })
+        .transform(babelify)
         .bundle()
         .pipe(source("build.js"))
         .pipe(gulp.dest("build"))
@@ -22,7 +27,7 @@ gulp.task('browser-sync', ['js'], function() {
         }
     });
 
-    gulp.watch("js/*.js", ['js-watch']);
+    gulp.watch("component/*.jsx", ['js-watch']);
 });
 
 
