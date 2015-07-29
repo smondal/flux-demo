@@ -6,10 +6,10 @@ class UserForm extends React.Component{
 	render(){
 		return(
 			<div>
-			<form onSubmit={this.handleSubmit} >
-				<List />
-			<button type="button" onClick={this.handleSubmit}>Submit</button>
-			</form>
+				<form onSubmit={this.handleSubmit} >
+					<List />
+					<button type="button" onClick={this.handleSubmit}>Submit</button>
+				</form>
 			</div>
 			)
 	}

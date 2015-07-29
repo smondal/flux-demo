@@ -15,9 +15,9 @@ class List extends React.Component{
 		return(
 			<div>
 				<select onChange={this.changeSelect.bind(this)} value={this.state.value}>
-					<option value="A">Apple</option>
+					<option value="A">Appple</option>
 					<option value="B">Banana</option>
-					<option value="M">Mango</option>
+					<option value="M">Manggo</option>
 		        </select>
 		     </div>			
 			)
